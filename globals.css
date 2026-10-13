@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+@keyframes matrixMove {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 0% 100%; }
+}
+
+@keyframes float3D {
+  0%, 100% { transform: translateY(0px) rotateX(0deg) rotateY(0deg); }
+  50% { transform: translateY(-10px) rotateX(4deg) rotateY(-4deg); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { filter: drop-shadow(0 0 15px rgba(59, 130, 246, 0.6)); }
+  50% { filter: drop-shadow(0 0 30px rgba(16, 185, 129, 0.9)); }
+}
+
+body {
+  min-height: 100vh;
+  background-color: #030712;
+  /* Grid 3D Matrix & Cyber Pattern */
+  background-image: 
+    radial-gradient(circle at 50% 20%, rgba(29, 78, 216, 0.15), transparent 70%),
+    linear-gradient(rgba(16, 185, 129, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(16, 185, 129, 0.05) 1px, transparent 1px);
+  background-size: 100% 100%, 40px 40px, 40px 40px;
+  background-attachment: fixed;
+  color: #f3f4f6;
+  overflow-x: hidden;
+}
+
+/* Class Animasi Hacker 3D */
+.animate-hacker-float {
+  animation: float3D 4s ease-in-out infinite, pulseGlow 3s ease-in-out infinite;
+}
+
+.glass-card-3d {
+  background: rgba(17, 24, 39, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.8), 0 0 15px rgba(59, 130, 246, 0.2);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card-3d:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 25px 40px -10px rgba(0, 0, 0, 0.9), 0 0 25px rgba(16, 185, 129, 0.4);
+  border-color: rgba(16, 185, 129, 0.4);
+}
+@keyframes aiGlow {
+  0%, 100% { box-shadow: 0 0 15px rgba(16, 185, 129, 0.3), 0 0 30px rgba(59, 130, 246, 0.2); }
+  50% { box-shadow: 0 0 25px rgba(16, 185, 129, 0.6), 0 0 50px rgba(168, 85, 247, 0.4); }
+}
+
+.ai-card-glow {
+  animation: aiGlow 4s infinite alternate;
+}
